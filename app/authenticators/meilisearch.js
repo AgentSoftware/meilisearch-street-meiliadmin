@@ -9,8 +9,13 @@ function makeRequest({ url, key }) {
     headers.append('Authorization', `Bearer ${key}`);
   }
 
+  let _url = new URL('/meilisearch-street-admin/', url);
+  console.log(_url.toString());
+
   // TODO: how to check session?
-  const req = new Request(new URL('/version', url), { headers });
+  const req = new Request(new URL('/meilisearch-street-admin/version', url), {
+    headers,
+  });
 
   return fetch(req).then((response) => {
     if (response.ok) {
