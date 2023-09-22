@@ -1,4 +1,4 @@
-FROM node:19 AS src
+FROM node:20.7 AS src
 
 # install deps
 WORKDIR /build
@@ -9,11 +9,11 @@ RUN npm install
 RUN npm run build
 
 # build caddy with caddy security
-FROM caddy:2.6.2-builder AS builder
-RUN xcaddy build --with github.com/greenpau/caddy-security@v1.1.18
+FROM caddy:2.7.4-builder AS builder
+RUN xcaddy build --with github.com/greenpau/caddy-security@v1.1.20
 
 # serve with caddy
-FROM caddy:2.6.2
+FROM alpine:3.18.3
 WORKDIR /portal
 
 EXPOSE 80
