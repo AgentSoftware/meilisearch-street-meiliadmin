@@ -1,6 +1,0 @@
-:80 {
-	# authorize with mypolicy
-	root * /portal/dist
-	try_files {path} /index.html
-	file_server
-}
