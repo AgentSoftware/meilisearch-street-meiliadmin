@@ -9,11 +9,11 @@ function makeRequest({ url, key }) {
     headers.append('Authorization', `Bearer ${key}`);
   }
 
-  let _url = new URL('/meilisearch-street-admin/', url);
+  let _url = new URL('/meilisearch-street/', url);
   console.log(_url.toString());
 
   // TODO: how to check session?
-  const req = new Request(new URL('/meilisearch-street-admin/version', url), {
+  const req = new Request(new URL('/meilisearch-street/version', url), {
     headers,
   });
 

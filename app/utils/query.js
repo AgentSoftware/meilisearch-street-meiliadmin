@@ -12,7 +12,7 @@ export default function query(path, options = {}) {
   }
 
   const req = new Request(
-    new URL(`/meilisearch-street-admin${path}`, url),
+    new URL(`/meilisearch-street${path}`, url),
     Object.assign(options, { headers })
   );
 
